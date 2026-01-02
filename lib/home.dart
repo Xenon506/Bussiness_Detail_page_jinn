@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
           }, child: const Text('Prototype 1')),
           ElevatedButton(onPressed: () {
             Navigator.push(context, 
-            MaterialPageRoute(builder: (context) => Businesspage2()));
+            MaterialPageRoute(builder: (context) => Bussinesspage2()));
           }, child: Text('Prototype 2'))
         ],
       ),
