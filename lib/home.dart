@@ -13,9 +13,9 @@ class Home extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(onPressed: () {
-            Navigator.push(
+            Navigator.push( 
               context,
-               MaterialPageRoute(builder: (context) => Businesspage1()),
+               MaterialPageRoute(builder: (context) => Businesspage1(bid: "2")),
             );
           }, child: const Text('Prototype 1')),
           ElevatedButton(onPressed: () {
