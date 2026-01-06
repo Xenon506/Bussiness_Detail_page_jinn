@@ -19,12 +19,13 @@ void initState() {
   super.initState();
   _scrollController.addListener(() {
     setState(() {
-      // Adjust padding based on scroll offset (example logic)
+
       _dynamicPadding = (20.0 + _scrollController.offset * 0.1).clamp(20.0, 60.0);
     });
   });
 }
 
+  @override
   Widget build(BuildContext context) {
     Widget buildInfoTile(IconData icon, String title, String subtitle,
         {bool isLink = false, bool isLast = false}) {
@@ -156,30 +157,30 @@ void initState() {
             //   decoration: ,
 
             // ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Column(
-                  children: [
-                    buildInfoTile(Icons.location_on, "Address",
-                        "3, 80 Ft Road, datt township, Indiranagar, Alwar"),
-                    buildInfoTile(Icons.business_rounded, "HQ City",
-                        "Jabalpur, Madhya Pradesh"),
-                    buildInfoTile(Icons.phone, "Contact", "9131314594"),
-                    buildInfoTile(Icons.language, "Website",
-                        "https://grovon.in/",
-                        isLink: true),
-                    buildInfoTile(Icons.email, "Emails",
-                        "careers@gYUvi.in\nsupport@grovon.in",
-                        isLast: true),
-                  ],
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.all(20),
+            //   child: Container(
+            //     decoration: BoxDecoration(
+            //       color: Colors.white,
+            //       borderRadius: BorderRadius.circular(15),
+            //     ),
+            //     child: Column(
+            //       children: [
+            //         buildInfoTile(Icons.location_on, "Address",
+            //             "3, 80 Ft Road, datt township, Indiranagar, Alwar"),
+            //         buildInfoTile(Icons.business_rounded, "HQ City",
+            //             "Jabalpur, Madhya Pradesh"),
+            //         buildInfoTile(Icons.phone, "Contact", "9131314594"),
+            //         buildInfoTile(Icons.language, "Website",
+            //             "https://grovon.in/",
+            //             isLink: true),
+            //         buildInfoTile(Icons.email, "Emails",
+            //             "careers@gYUvi.in\nsupport@grovon.in",
+            //             isLast: true),
+            //       ],
+            //     ),
+            //   ),
+            // ),
           ],
           
         ),

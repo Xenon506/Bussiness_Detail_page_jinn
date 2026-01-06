@@ -12,7 +12,7 @@ class Businesspage1 extends StatefulWidget {
 
 class _Businesspage1State extends State<Businesspage1> {
   final ScrollController _scrollController = ScrollController();
-  double _dynamicPadding = 20.0;
+  final double _dynamicPadding = 20.0;
 
   @override
   void initState() {
