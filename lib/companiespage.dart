@@ -24,7 +24,7 @@ class _CompaniespageState extends State<Companiespage> {
 
   double _scrollOffset = 1.0; 
 
-  // final List<
+
 
   final List<Company> companiesNearby = [
     Company(name: "Digi Chetan", category: "Marketing Agency", tagline: "Data-driven Growth", color: Colors.purple.shade400,imagepath: "assets/images/logo1.jpeg"),
@@ -48,8 +48,11 @@ class _CompaniespageState extends State<Companiespage> {
   }
 
   // A visually appealing card widget that scales with scroll offset
+
   Widget _buildDynamicCard(Company company, int index) {
+
     // Calculate a dynamic scale value based on scroll position to make it appealing
+    
     final cardOffset = index * 100.0 - _scrollOffset; 
     final scale = (1 - (cardOffset.abs() / 500)).clamp(0.85, 1.0);
     final opacity = (1 - (cardOffset.abs() / 400)).clamp(0.6, 1.0);

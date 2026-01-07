@@ -164,9 +164,6 @@ class _Companiespage2State extends State<Companiespage2> {
     childCount: companiesNearby.length,
   ),
 ),
-
-
-          // Add some space at the bottom so we can see the effect fully
           const SliverToBoxAdapter(
             child: SizedBox(height: 500), 
           )
