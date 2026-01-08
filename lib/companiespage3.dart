@@ -6,14 +6,16 @@ class Company {
   final String tagline;
   final Color color; 
   final String imagepath;
-  Company({required this.name, required this.category, required this.tagline, required this.color,required this.imagepath});
+  Company({required this.name, required this.category, required this.tagline, required this.color,required this.imagepath, required String aim});
+
+   get aim => null;
 }
 
 
 class Companiespage3 extends StatefulWidget {
   final dynamic bid;
 
- Companiespage3({super.key, required this.bid});
+ const Companiespage3({super.key, required this.bid});
 
 
 
@@ -27,12 +29,12 @@ final ScrollController _scrollController = ScrollController();
 double _scrollOffset = 0;
 
   final List<Company> companiesNearby = [
-    Company(name: "Digi Chetan", category: "Marketing Agency", tagline: "Data-driven Growth", color: Colors.purple.shade400,imagepath: "assets/images/logo1.jpeg"),
-    Company(name: "Grovon Solutions", category: "Consulting", tagline: "Scale Seamlessly", color: Colors.teal.shade500, imagepath: "assets/images/logo2.jpeg"),
-    Company(name: "Kiorons", category: "IT Company", tagline: "Innovating Tech", color: Colors.orange.shade600, imagepath: "assets/images/logo3.jpeg"),
-    Company(name: "Hartalkar Innovations", category: "EV R&D", tagline: "Future Mobility", color: Colors.blue.shade700, imagepath: "assets/images/logo4.jpeg"),
-    Company(name: "Example Corp", category: "AI Solutions", tagline: "Smart Automation", color: Colors.pink.shade400, imagepath: "assets/images/logo5.jpeg"),
-    Company(name: "Digi Chetan", category: "Marketing Agency", tagline: "Data-driven Growth", color: Colors.purple.shade400,imagepath: "assets/images/logo1.jpeg"),
+    Company(name: "Digi Chetan", category: "Marketing Agency", tagline: "Data-driven Growth", color: Colors.purple.shade400,imagepath: "assets/images/logo1.jpeg", aim: ''),
+    Company(name: "Grovon Solutions", category: "Consulting", tagline: "Scale Seamlessly", color: Colors.teal.shade500, imagepath: "assets/images/logo2.jpeg", aim: ''),
+    Company(name: "Kiorons", category: "IT Company", tagline: "Innovating Tech", color: Colors.orange.shade600, imagepath: "assets/images/logo3.jpeg", aim: ''),
+    Company(name: "Hartalkar Innovations", category: "EV R&D", tagline: "Future Mobility", color: Colors.blue.shade700, imagepath: "assets/images/logo4.jpeg", aim: ''),
+    Company(name: "Example Corp", category: "AI Solutions", tagline: "Smart Automation", color: Colors.pink.shade400, imagepath: "assets/images/logo5.jpeg", aim: ''),
+    Company(name: "Digi Chetan", category: "Marketing Agency", tagline: "Data-driven Growth", color: Colors.purple.shade400,imagepath: "assets/images/logo1.jpeg", aim: ''),
 
 
   ];

@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class Company {
   final String name;
-  final String description;
-  final String website;
-  final IconData icon;
+  final String aim;
+  // final String website;
+  // final IconData icon;
   final Color color;
   final String imagepath;
 
   Company({
     required this.name,
-    required this.description,
-    required this.website,
-    required this.icon,
+    required this.aim,
+    // required this.website,
+    // required this.icon,
     required this.color,
     required this.imagepath,
   });
@@ -20,127 +20,114 @@ class Company {
 
 // ignore: camel_case_types
 class companiespage5 extends StatelessWidget {
-    final dynamic bid;
-
-  companiespage5({super.key, required this.bid});
+  companiespage5({super.key});
 
   final List<Company> companies = [
     Company(
       name: 'Yogi Chetan',
-      description: 'Digital Marketing Agency',
-      website: 'www.digichetan.com',
-      icon: Icons.pie_chart,
+      aim: 'Digital Marketing Agency',
+      // website: 'www.digichetan.com',
+      // icon: Icons.pie_chart,
       color: Colors.blue,
-      imagepath: 'assets/images/logo1',
+      imagepath: 'assets/images/logo1.jpeg',
     ),
     Company(
       name: 'Gro Solutions',
-      description: 'IT Company',
-      website: 'www.grovon.in',
-      icon: Icons.arrow_upward,
+      aim: 'IT Company',
+      // website: 'www.grovon.in',
+      // icon: Icons.arrow_upward,
       color: Colors.green,
-      imagepath: 'assets/images/logo1',
+      imagepath: 'assets/images/logo2.jpeg',
     ),
     Company(
       name: 'Hart Innovations',
-      description: 'EV Research And Development',
-      website: 'www.hartalkar.com',
-      icon: Icons.electric_car,
+      aim: 'EV Research And Development',
+      // website: 'www.hartalkar.com',
+      // icon: Icons.electric_car,
       color: Colors.orange,
-      imagepath: 'assets/images/logo1',
+      imagepath: 'assets/images/logo3.jpeg',
     ),
     Company(
       name: 'kk',
-      description: 'IT Company',
-      website: 'www.kiorons.com',
-      icon: Icons.code,
+      aim: 'IT Company',
+      // website: 'www.kiorons.com',
+      // icon: Icons.code,
       color: Colors.deepPurple,
-      imagepath: 'assets/images/logo1',
+      imagepath: 'assets/images/logo6.jpg',
     ),
   ];
 
-  @override
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Companies Nearby'),
-        centerTitle: false,
-        elevation: 0,
-        backgroundColor: Colors.cyan[800],
-      ),
+      appBar: AppBar(title: Text('Companies'),
+      backgroundColor: Colors.cyan[800],
+      foregroundColor: Colors.white,),
       body: ListView.builder(
-        padding: const EdgeInsets.all(16.0),
         itemCount: companies.length,
         itemBuilder: (context, index) {
-          return CompanyCard(company: companies[index], bid: '4',);
+          final company = companies[index];
+
+
+
+          return Card(
+            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            child: Padding(
+              padding: EdgeInsets.all(3),
+              
+              child: Row(
+                children: [
+                  
+                    
+                      // Image
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset(
+                          company.imagepath,
+                          height: 150,
+                          width: 150,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    
+                      SizedBox(width: 12),
+                    
+
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(company.name,
+                                style: TextStyle(
+                                    fontSize: 21, fontWeight: FontWeight.bold)),
+                            Text(company.aim,
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.grey[600])),
+                          ],
+                        ),
+                      ),
+                    
+                      ElevatedButton(
+                        onPressed: () {
+                          
+                        },
+                        
+                        child: Text('Visit',
+                        style: TextStyle(color: Colors.black),),
+                        
+                      ),
+                    ],
+                  
+                
+              ),
+            ),
+          );
         },
       ),
     );
   }
 }
-
-class CompanyCard extends StatelessWidget {
-  final Company company;
-  
-  final dynamic bid;
-  const CompanyCard({Key? key, required this.company, required this.bid}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.symmetric(vertical: 10.0),
-      elevation: 5,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          
-          children: [
-            const SizedBox(height: 12),
-            Image.asset('assets/images/logo2.jpeg',
-            fit: BoxFit.cover,
-            height: 100,
-            width: 100,
-            ),
-            Text(
-              company.website,
-              style: TextStyle(
-                color: Colors.teal[600],
-                fontStyle: FontStyle.italic,
-              ),
-            ),
-            // const SizedBox(height:6),
-            Align(
-              alignment: Alignment.centerRight,
-              child: ElevatedButton(
-                onPressed: () {
-                  // Action for "View Details" button
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Viewing details for ${company.name}'),
-                    ),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-                child: const Text(
-                  'View Details',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 // import 'package:bussiness_by_jinn/bussinesspage1.dart';
 // import 'package:flutter/material.dart';
 
