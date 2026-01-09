@@ -5,14 +5,14 @@ class Company {
   final String category;
   final String tagline;
   final String image;
-  final double rating;
+  // final double rating;
 
   Company({
     required this.name,
     required this.category,
     required this.tagline,
     required this.image,
-    required this.rating,
+    // required this.rating,
   });
 }
 
@@ -25,28 +25,28 @@ class Companiespage4 extends StatelessWidget {
       category: "Marketing Agency",
       tagline: "Growth through intelligence",
       image: "assets/images/logo1.jpeg",
-      rating: 4.8,
+      // rating: 4.8,
     ),
     Company(
       name: "Grovon Solutions",
       category: "Consulting",
       tagline: "Scale Seamlessly",
       image: "assets/images/logo2.jpeg",
-      rating: 4.6,
+      // rating: 4.6,
     ),
     Company(
       name: "Kiorons",
       category: "IT Company",
       tagline: "Innovation Everyday",
       image: "assets/images/logo3.jpeg",
-      rating: 4.9,
+      // rating: 4.9,
     ),
     Company(
       name: "Hartalkar Innovations",
       category: "EV R&D",
       tagline: "Future Mobility",
       image: "assets/images/logo4.jpeg",
-      rating: 4.7,
+      // rating: 4.7,
     ),
   ];
 
@@ -141,12 +141,12 @@ class Companiespage4 extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(Icons.star, size: 16, color: Colors.amber),
-                      Text("${c.rating}",
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 13,
-                          )),
+                      // const Icon(Icons.star, size: 16, color: Colors.amber),
+                      // Text("${c.rating}",
+                      //     style: const TextStyle(
+                      //       fontWeight: FontWeight.w600,
+                      //       fontSize: 13,
+                      //     )),
                     ],
                   ),
 

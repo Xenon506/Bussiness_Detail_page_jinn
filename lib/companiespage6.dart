@@ -1,70 +1,125 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-
-
-
-class Company {
-  final String name;
-  final String aim;
-  final String imagepath;
-
-  Company({
-    required this.name,
-    required this.aim,
-    required this.imagepath,
-  });
-}
+import 'package:flutter/rendering.dart';
 
 class Companiespage6 extends StatelessWidget {
-  final dynamic bid;
-  const Companiespage6({super.key, required this.bid});
+  const Companiespage6({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<ImageInfo>(
-      future: getImageInfo(bid),
-      builder: (context, snapshot) {
-        BoxFit fit = BoxFit.cover;
+    return Scaffold(
+      appBar: AppBar(
+        title: Title(color: Colors.white, child: Text('Companies Nearby')),
+        backgroundColor: Colors.cyan[800],
+        foregroundColor: Colors.white,
+      ),
+      body: Column(
 
-        if (snapshot.hasData) {
-          final width = snapshot.data!.image.width;
-          final height = snapshot.data!.image.height;
-          final ratio = width / height;
-
-          if (ratio > 1.6) {
-            // Very wide → banner/logo
-            fit = BoxFit.contain;
-          } else if (ratio > 1.1) {
-            // Slightly wide
-            fit = BoxFit.cover;
-          } else {
-            // Square or tall
-            fit = BoxFit.cover;
-          }
-        }
-
-        return Image.asset(
-          bid,
-          fit: fit,
-        );
-      },
+        children: [
+          Text('IT Companies',
+          style: TextStyle(fontSize: 18,
+          fontWeight: FontWeight.bold),
+          textAlign: TextAlign.start,
+          
+          ),
+            SingleChildScrollView(
+  scrollDirection: Axis.horizontal,
+  child: Row(
+    children: [
       
+
+      SizedBox(
+        width: 300, 
+        child: Card(
+
+          elevation: 5,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadiusGeometry.all(Radius.circular(20)),
+                  child: Image.asset('assets/images/logo1.jpeg'),
+                  
+                ),
+                Text('yuvi Solutions',
+                style: TextStyle(fontSize: 23,
+                fontWeight: FontWeight.bold),
+                ),
+                Text('Diigital Marketing Company',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500
+                ),
+                ),
+
+                ElevatedButton(onPressed: (){}, child: Text('data')),
+                // Row(
+                //   children: [
+                //     ElevatedButton(onPressed: (){}, child: Text('data'))
+                //   ],
+                // )
+
+              ],
+              
+            ),
+            
+          ),
+        ),
+        
+      ),
+      
+
+      SizedBox(
+        width: 20,
+        child: Card(
+
+        ),
+      ),
+      SizedBox(
+        // height: 200,
+        width: 300, 
+        child: Card(
+          elevation: 6,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadiusGeometry.all(Radius.circular(20)),
+                  child: Image.asset('assets/images/logo2.jpeg',
+                  fit: BoxFit.cover,),
+                  
+                ),
+                Text('Gro Solutions',
+                style: TextStyle(fontSize: 23,
+                fontWeight: FontWeight.bold),
+                ),
+                Text('Diigital Marketing Company',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500
+                ),),
+                                ElevatedButton(onPressed: (){}, child: Text('data')),
+
+              ],
+            ),
+          ),
+        ),
+      ),
+    ],
+  ),
+)
+          
+        ],
+      ),
     );
   }
-
-  Future<ImageInfo> getImageInfo(String asset) async {
-    final image = AssetImage(asset);
-    final config = const ImageConfiguration();
-    final stream = image.resolve(config);
-    final completer = Completer<ImageInfo>();
-    ImageStreamListener? listener;
-    listener = ImageStreamListener((info, _) {
-      completer.complete(info);
-      stream.removeListener(listener!);
-    });
-    stream.addListener(listener);
-    return completer.future;
-  }
-  
 }
