@@ -2,7 +2,6 @@ import 'package:bussiness_by_jinn/bussinesspage5.dart';
 import 'package:bussiness_by_jinn/companiespage.dart';
 import 'package:bussiness_by_jinn/companiespage4.dart';
 import 'package:bussiness_by_jinn/companiespage6.dart';
-import 'package:bussiness_by_jinn/companypage2.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -23,10 +22,6 @@ class Home extends StatelessWidget {
             );
           }, child: const Text('companies page 1')),
 
-          ElevatedButton(onPressed: (){
-            Navigator.push(context, 
-            MaterialPageRoute(builder: (context) => Companiespage2()));
-          }, child: Text('companies page 2')),
         
         // ElevatedButton(onPressed: (){
         //     Navigator.push(context, 
