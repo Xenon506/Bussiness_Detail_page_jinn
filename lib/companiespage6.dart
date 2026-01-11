@@ -1,5 +1,4 @@
 import 'package:bussiness_by_jinn/bussinesspage1.dart';
-import 'package:bussiness_by_jinn/bussinesspage2.dart';
 import 'package:flutter/material.dart';
 
 class Companiespage6 extends StatelessWidget {
@@ -194,7 +193,7 @@ class Companiespage6 extends StatelessWidget {
 
                           ElevatedButton(onPressed: () {
                             Navigator.push(context, 
-                          MaterialPageRoute(builder: (context) => Bussinesspage2()));},
+                          MaterialPageRoute(builder: (context) => Businesspage1(bid: '4')));},
                           
                            child: Text('data')),
 
