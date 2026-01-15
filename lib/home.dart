@@ -13,35 +13,42 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.cyan[800],
-        
+
       ),
       body: 
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: () {
-              Navigator.push( 
-                context,
-                 MaterialPageRoute(builder: (context) => Companiespage()),
-              );
-            }, child: const Text('companies page 1')),
-        
-          
-          // ElevatedButton(onPressed: (){
-          //     Navigator.push(context, 
-          //     MaterialPageRoute(builder: (context) => Companiespage3(bid: '1')));
-          //   }, child: Text('companies page 3')),
-        
-        
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, 
-              MaterialPageRoute(builder: (context) => companiespage5()));
-            }, child: Text('companies page 5')),
-            
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, 
-              MaterialPageRoute(builder: (context) => Companiespage6()));
-            }, child: Text('companies page 6')),
+
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: [
+                Padding(
+                  padding: EdgeInsetsGeometry.fromLTRB(52,0,0,20),
+                  child: 
+                  Column(
+                    children: [
+                    ElevatedButton(onPressed: () {
+                      Navigator.push( 
+                        context,
+                         MaterialPageRoute(builder: (context) => Companiespage()),
+                      );
+                    }, child: const Text('companies page 1')),
+                    
+                    ElevatedButton(onPressed: (){
+                      Navigator.push(context, 
+                      MaterialPageRoute(builder: (context) => companiespage5()));
+                    }, child: Text('companies page 5')),
+                    
+                    ElevatedButton(onPressed: (){
+                      Navigator.push(context, 
+                      MaterialPageRoute(builder: (context) => Companiespage6()));
+                    }, child: Text('companies page 6')),
+                    ],),
+                ),
+              ],
+            ),
         
         
         
