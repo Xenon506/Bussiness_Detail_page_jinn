@@ -29,22 +29,28 @@ class Home extends StatelessWidget {
                   child: 
                   Column(
                     children: [
-                    ElevatedButton(onPressed: () {
-                      Navigator.push( 
-                        context,
-                         MaterialPageRoute(builder: (context) => Companiespage()),
-                      );
-                    }, child: const Text('companies page 1')),
-                    
-                    ElevatedButton(onPressed: (){
-                      Navigator.push(context, 
-                      MaterialPageRoute(builder: (context) => companiespage5()));
-                    }, child: Text('companies page 5')),
-                    
-                    ElevatedButton(onPressed: (){
-                      Navigator.push(context, 
-                      MaterialPageRoute(builder: (context) => Companiespage6()));
-                    }, child: Text('companies page 6')),
+                      DecoratedBox(decoration:BoxDecoration(border: BoxBorder.all()),
+                        child: 
+                          
+                        ElevatedButton(onPressed: () {
+                          Navigator.push( 
+                            context,
+                             MaterialPageRoute(builder: (context) => Companiespage()),
+                          );
+                        }, child: const Text('companies page 1')),
+                      ),
+                        
+                        ElevatedButton(onPressed: (){
+                          Navigator.push(context, 
+                          MaterialPageRoute(builder: (context) => companiespage5()));
+                        }, child: Text('companies page 5')),
+                        
+                        ElevatedButton(onPressed: (){
+                          Navigator.push(context, 
+                          MaterialPageRoute(builder: (context) => Companiespage6()));
+                        }, child: Text('companies page 6')),
+                        
+                      
                     ],),
                 ),
               ],
