@@ -69,7 +69,7 @@ class _CompaniespageState extends State<Companiespage> {
             borderRadius: BorderRadius.circular(15),
             boxShadow: [
               BoxShadow(
-                color: company.color.withOpacity(0.2),
+                color: company.color.withValues(alpha: 0.2),
                 blurRadius: 10,
                 offset: const Offset(0, 5),
               ),

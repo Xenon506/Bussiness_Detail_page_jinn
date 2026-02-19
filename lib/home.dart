@@ -29,7 +29,7 @@ class Home extends StatelessWidget {
                   child: 
                   Column(
                     children: [
-                      DecoratedBox(decoration:BoxDecoration(border: BoxBorder.all()),
+                      DecoratedBox(decoration:BoxDecoration(border: BoxBorder.all(width: 0,color: Colors.black)),
                         child: 
                           
                         ElevatedButton(onPressed: () {

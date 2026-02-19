@@ -59,6 +59,7 @@ class Companiespage6 extends StatelessWidget {
                             'yuvi Solutions',
                             style: TextStyle(
                               fontSize: 23,
+                              
                               fontWeight: FontWeight.bold,
                             ),
                           ),
