@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bussiness_by_jinn/bussinesspage5.dart';
 import 'package:bussiness_by_jinn/companiespage.dart';
 
@@ -11,55 +13,25 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
+      extendBodyBehindAppBar:true,
+      floatingActionButton: FloatingActionButton(onPressed: (){}),
+
       appBar: AppBar(
-        backgroundColor: Colors.cyan[800],
-
-      ),
-      body: 
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-
-              children: [
-                Padding(
-                  padding: EdgeInsetsGeometry.fromLTRB(52,0,0,20),
-                  child: 
-                  Column(
-                    children: [
-                      DecoratedBox(decoration:BoxDecoration(border: BoxBorder.all(width: 0,color: Colors.black)),
-                        child: 
-                          
-                        ElevatedButton(onPressed: () {
-                          Navigator.push( 
-                            context,
-                             MaterialPageRoute(builder: (context) => Companiespage()),
-                          );
-                        }, child: const Text('companies page 1')),
-                      ),
-                        
-                        ElevatedButton(onPressed: (){
-                          Navigator.push(context, 
-                          MaterialPageRoute(builder: (context) => companiespage5()));
-                        }, child: Text('companies page 5')),
-                        
-                        ElevatedButton(onPressed: (){
-                          Navigator.push(context, 
-                          MaterialPageRoute(builder: (context) => Companiespage6()));
-                        }, child: Text('companies page 6')),
-                        
-                      
-                    ],),
-                ),
-              ],
-            ),
-        
-        
-        
-          ],
+        automaticallyImplyActions: true,
+        actions: [],
+        backgroundColor: Colors.blueGrey[400],
+        title: Text("At you Service",
+        style: TextStyle(
+          decorationColor: Colors.black,
+          
+         ),
+         textAlign: TextAlign.center,
+        //  textDirection: dirc,
         ),
+         
+        titleSpacing: sqrt1_2,
+      ),
       
     );
   }
