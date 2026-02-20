@@ -15,24 +15,19 @@ class Home extends StatelessWidget {
     return Scaffold(
       
       extendBodyBehindAppBar:true,
-      floatingActionButton: FloatingActionButton(onPressed: (){}),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.amber[50],
+        onPressed: (){}
+        ),
 
       appBar: AppBar(
         automaticallyImplyActions: true,
         actions: [],
-        backgroundColor: Colors.blueGrey[400],
-        title: Text("At you Service",
-        style: TextStyle(
-          decorationColor: Colors.black,
-          
-         ),
-         textAlign: TextAlign.center,
-        //  textDirection: dirc,
-        ),
+        backgroundColor: const Color.fromARGB(255, 23, 24, 24),
+        
          
-        titleSpacing: sqrt1_2,
-      ),
       
+    )
     );
   }
 }
