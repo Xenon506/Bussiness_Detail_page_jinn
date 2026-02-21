@@ -5,6 +5,7 @@ import 'package:bussiness_by_jinn/companiespage.dart';
 
 import 'package:bussiness_by_jinn/companiespage6.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -27,7 +28,32 @@ class Home extends StatelessWidget {
         
          
       
-    )
+    ),
+
+   body: SafeArea(
+    child: LayoutBuilder(
+      builder: (context, constraints) {
+        return SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: constraints.maxHeight,
+            ),
+            child: IntrinsicHeight(
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Container(
+                      
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    ),
+  ),
     );
   }
 }
